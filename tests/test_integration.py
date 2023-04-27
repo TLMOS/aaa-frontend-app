@@ -53,5 +53,5 @@ async def test_if_sent_faulty_image_then_error_appear_in_response(client):
     response = await client.post('/', data=form)
     text = (await response.text()).lower()
     assert response.status == HTTPStatus.OK, text
-    error = 'coordinate &#39;lower&#39; is less than &#39;upper&#39;'
+    error = 'y1 must be greater than or equal to y0'
     assert error in text, text
